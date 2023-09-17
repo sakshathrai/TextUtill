@@ -202,5 +202,3 @@ This button triggers the `cpy` function, which utilizes the Clipboard API to cop
 
 ### **Topic 11: Component Composition**
 **Explanation:** Your application is composed of multiple components (`App`, `Navbar`, and `TextForm`) that work together to create the user interface. Component composition is a fundamental concept in React, allowing you to build complex UIs by combining smaller, reusable components.
-.
-![image](https://github.com/sakshathrai/TextUtill/assets/90779367/7d9909b4-4f88-4115-bb01-ad2257627f9e)
