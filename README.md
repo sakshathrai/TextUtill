@@ -68,3 +68,120 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Notes:
+Certainly! Below is a detailed breakdown of the code you've provided, organized into various topics such as JSX, Props, PropTypes, Hooks, Event Handling, and CSS inside JS. I've included examples from your code to illustrate each topic.
+
+### Topic 1: Basics of JSX
+JSX (JavaScript XML) is a syntax extension for JavaScript used in React for defining the structure of user interfaces.
+
+**Example:**
+```jsx
+return (
+  <div className="container">
+    <h3>{props.heading}</h3>
+    {/* ...other JSX elements */}
+  </div>
+);
+```
+
+### Topic 2: Introduction to Props
+Props (short for properties) are a way to pass data from a parent component to a child component in React. They are read-only and help in creating reusable components.
+
+**Example:**
+```jsx
+<Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
+<TextForm heading="Enter the text to Analyze below" mode={mode} />
+```
+
+### Topic 3: PropTypes
+PropTypes are used for type-checking props in React components. They help ensure that the correct types of props are passed to a component.
+
+**Example:**
+```jsx
+Navbar.propTypes = {
+  title: PropTypes.string.isRequired,
+  about: PropTypes.string.isRequired,
+  mode: PropTypes.string.isRequired,
+};
+```
+
+### Topic 4: Hooks
+Hooks are functions that allow functional components to use state and other React features. The `useState` hook is used to manage state.
+
+**Example:**
+```jsx
+const [mode, setmode] = useState('light');
+const [text, setText] = useState('');
+```
+
+### Topic 5: Event Handling
+Event handling in React involves defining functions to respond to events triggered by user interactions.
+
+**Example:**
+```jsx
+const toggleMode = () => {
+  if (mode === 'light') {
+    setmode('dark');
+    // ...other code
+  } else if (mode === 'dark') {
+    setmode('light');
+    // ...other code
+  }
+};
+```
+
+### Topic 6: CSS Inside JS
+In React, you can include CSS styles directly within your JavaScript code using object literals or template literals.
+
+**Example:**
+```jsx
+<textarea
+  className="form-control"
+  rows="8"
+  value={text}
+  id="myBox"
+  placeholder="Enter the Text"
+  style={{
+    backgroundColor: props.mode === 'light' ? 'white' : '#1B1B1B',
+    color: props.mode === 'dark' ? 'white' : 'black',
+  }}
+></textarea>
+```
+
+### Topic 7: Conditional Rendering
+Conditional rendering allows you to render different content based on conditions.
+
+**Example:**
+```jsx
+<button className="btn btn-primary mx-1 my-1" onClick={conUp}>
+  Convert to UpperCase
+</button>
+<button className="btn btn-primary mx-1 my-1" onClick={conLo}>
+  Convert to LowerCase
+</button>
+```
+
+### Topic 8: Extracting Data
+Your code includes functions to extract specific data from the input text, such as email addresses and website URLs.
+
+**Example:**
+```jsx
+<p><b>Email: </b>{extractEmails()}</p>
+<p><b>Website: </b>{extractWeb()}</p>
+```
+
+### Topic 9: Copy to Clipboard
+You have a function to copy the text to the clipboard, which uses the `navigator.clipboard.writeText` method.
+
+**Example:**
+```jsx
+<button className="btn btn-primary mx-1 my-1" onClick={cpy}>Copy</button>
+```
+
+### Topic 10: State Management
+State is managed using the `useState` hook to keep track of `mode` and `text` in your application.
+
+### Topic 11: Component Composition
+Your application is composed of multiple components (`App`, `Navbar`, and `TextForm`) that work together to create the user interface.
+![image](https://github.com/sakshathrai/TextUtill/assets/90779367/416806d5-850d-4ad7-b0ac-f7e3a123f613)
