@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function About() {
+function About(props) {
   return (
     <div>
-        <hr />
+      <hr style={props.mode === 'dark' ? { borderColor: 'rgb(255, 255, 255)' } : { borderColor: 'rgb(0, 0, 0)' }} />
       <marquee>My Biography</marquee>
-      <hr />
+      <hr style={props.mode === 'dark' ? { borderColor: 'rgb(255, 255, 255)' } : { borderColor: 'rgb(0, 0, 0)' }} />
       <h1 style={{ textAlign: 'center' }}><b>SAKSHATH RAI K</b></h1>
       <h2 style={{ textAlign: 'center' }}>COMPUTER SCIENCE</h2>
       <h3 style={{ textAlign: 'center' }}>4CB21CS095</h3>
@@ -21,10 +22,14 @@ function About() {
         My Hobbies are
         Coding
         Swimming
-      </code>
-      <p style={{ textAlign: 'center' }}>&#169; SAKSHATH RAI K - 4CB21CS095</p>
+      </code> 
+      
     </div>
   );
 }
+
+About.propTypes = {
+  mode: PropTypes.string.isRequired,
+};
 
 export default About;
